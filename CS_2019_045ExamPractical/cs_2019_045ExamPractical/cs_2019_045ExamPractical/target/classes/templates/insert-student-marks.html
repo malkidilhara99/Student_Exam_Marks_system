@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Students marks</title>
+    <script>
+        function saveStudent() {
+            window.location.href="/viewStudent";
+        }
+    </script>
+</head>
+<body>
+<div align="center">
+    <h2>Enter Student OOP Marks</h2>
+
+
+
+    <form action=" " th:action="@{/submit-Marks}" th:object="${student}" method="post">
+        <div>
+            <label> Student ID </label>
+            <input type="text"   required th:field="*{id}">
+        </div>
+        <br>
+        <div>
+            <label >Student Name</label>
+            <input type="text"    required th:field="*{Name}">
+        </div>
+
+        <br>
+        <div>
+            <label >CA</label>
+            <input type="text"   required th:field="*{CA}">
+        </div>
+        <br>
+        <div>
+            <label>Practical</label>
+            <input type="text"    required th:field="*{practical}">
+        </div>
+        <br>
+        <div>
+            <label >Theory</label>
+            <input type="text"  required th:field="*{Theory}">
+        </div>
+        <br>
+
+
+        <input type="submit" value="Save">
+        <input type="reset" value="Reset">
+    </form>
+    <br/>
+    <button onclick="saveStudent()">View All marks</button>
+
+</div>
+</body>
+</html>
